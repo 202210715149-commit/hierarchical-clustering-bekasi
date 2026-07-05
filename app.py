@@ -132,6 +132,9 @@ elif menu == "🗂️ Dataset":
     st.write("🗂️ Dataset")
 
     st.dataframe(df, use_container_width=True)
+    
+    # Nomor urut mulai dari 1
+    df_cluster.index = df_cluster.index + 1
 
 # =====================
 # Diagram Batang
