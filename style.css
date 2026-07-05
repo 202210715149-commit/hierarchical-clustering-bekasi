@@ -102,7 +102,9 @@ footer{
     visibility:hidden;
 }
 
-/* Footer Sidebar */
+/*  ===========================
+Footer Sidebar
+ =========================== */
 .sidebar-footer{
     position: fixed;
     bottom: 20px;
