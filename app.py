@@ -186,6 +186,12 @@ elif menu=="📊 Diagram Batang":
 
     st.subheader("📊 Diagram Batang")
 
+    st.info("""
+**Penjelasan Diagram Batang**
+
+Diagram batang digunakan untuk membandingkan rata-rata jumlah murid SMP Negeri dan SMP Swasta pada setiap kecamatan di Kota Bekasi. Visualisasi ini memudahkan pengguna dalam melihat perbedaan jumlah murid antar kecamatan sehingga karakteristik setiap wilayah dapat diamati sebelum dilakukan proses clustering.
+""")
+
     x = np.arange(len(df))
     width = 0.35
 
@@ -235,6 +241,12 @@ elif menu=="🌳 Dendrogram":
 
     st.subheader("🌳 Dendrogram")
 
+    st.info("""
+**Penjelasan Dendrogram**
+
+Dendrogram merupakan visualisasi hasil Hierarchical Clustering yang menunjukkan proses penggabungan antar kecamatan berdasarkan tingkat kemiripan data. Semakin rendah posisi penggabungan pada dendrogram, semakin tinggi tingkat kemiripan antar kecamatan tersebut. Pada penelitian ini dendrogram digunakan untuk membantu menentukan jumlah cluster yang akan dibentuk.
+""")
+
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
     linked=linkage(X,method="ward")
@@ -256,6 +268,12 @@ elif menu=="🌳 Dendrogram":
 elif menu=="🎯 Scatter Plot":
 
     st.subheader("🎯 Scatter Plot")
+
+    st.info("""
+**Penjelasan Scatter Plot**
+
+Scatter plot digunakan untuk menampilkan hasil pengelompokan (cluster) dalam bentuk titik berdasarkan dua variabel, yaitu rata-rata jumlah murid SMP Negeri dan rata-rata jumlah murid SMP Swasta. Setiap warna menunjukkan kelompok (cluster) yang berbeda sehingga memudahkan dalam melihat persebaran data dan hubungan antar kecamatan.
+""")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
@@ -292,6 +310,12 @@ elif menu=="🎯 Scatter Plot":
 elif menu == "🧩 Hasil Clustering":
 
     st.subheader("🧩 Hasil Clustering")
+
+    st.info("""
+**Penjelasan Hasil Clustering**
+
+Halaman ini menampilkan hasil akhir proses Hierarchical Clustering berupa pembagian 12 kecamatan ke dalam 3 cluster. Setiap cluster berisi kecamatan yang memiliki karakteristik jumlah murid yang relatif mirip berdasarkan dua variabel penelitian, yaitu rata-rata jumlah murid SMP Negeri dan SMP Swasta. Hasil ini dapat digunakan sebagai dasar analisis untuk mengetahui karakteristik masing-masing kelompok kecamatan.
+""")
 
     # Mengambil dua variabel
     X = df[["Rata_Negeri", "Rata_Swasta"]]
