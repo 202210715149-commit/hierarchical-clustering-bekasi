@@ -34,11 +34,11 @@ df = pd.read_csv("dataset_clean.csv")
 menu = st.sidebar.selectbox(
     "🏠 Menu",
     [
-        "Dataset",
-        "Diagram Batang",
-        "Dendrogram",
-        "Scatter Plot",
-        "Hasil Cluster"
+        "📂 Dataset",
+        "📊 Diagram Batang",
+        "🌳 Dendrogram",
+        "🎯 Scatter Plot",
+        "🧩 Hasil Cluster"
     ]
 )
 
@@ -105,9 +105,9 @@ elif menu=="📊 Diagram Batang":
 # Dendrogram
 # =====================
 
-elif menu=="📈 Dendrogram":
+elif menu=="🌳 Dendrogram":
 
-    st.subheader("📈 Dendrogram")
+    st.subheader("🌳 Dendrogram")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
@@ -127,9 +127,9 @@ elif menu=="📈 Dendrogram":
 # Scatter Plot
 # =====================
 
-elif menu=="📈 Scatter Plot":
+elif menu=="🎯 Scatter Plot":
 
-    st.subheader("📈 Scatter Plot")
+    st.subheader("🎯 Scatter Plot")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
@@ -163,9 +163,9 @@ elif menu=="📈 Scatter Plot":
 # Hasil Cluster
 # =====================
 
-elif menu=="🌳 Hasil Cluster":
+elif menu=="🧩 Hasil Cluster":
 
-    st.subheader("🌳 Hasil Clustering")
+    st.subheader("🧩 Hasil Clustering")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
