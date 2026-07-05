@@ -131,10 +131,12 @@ elif menu == "🗂️ Dataset":
 
     st.write("🗂️ Dataset")
 
-    st.dataframe(df, use_container_width=True)
-    
+    df_tampil = df.copy()
+
     # Nomor urut mulai dari 1
-    df_cluster.index = df_cluster.index + 1
+    df_tampil.index = range(1, len(df_tampil) + 1)
+
+    st.dataframe(df_tampil, use_container_width=True)
 
 # =====================
 # Diagram Batang
