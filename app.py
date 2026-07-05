@@ -362,51 +362,10 @@ Scatter Plot menunjukkan bahwa setiap cluster memiliki pola persebaran yang berb
         )
 
     ax.set_xlabel("Rata Negeri")
+
     ax.set_ylabel("Rata Swasta")
 
     st.pyplot(fig)
-
-    from matplotlib.lines import Line2D
-
-    legend_elements = [
-    Line2D(
-        [0], [0],
-        marker='o',
-        color='w',
-        label='Cluster 1',
-        markerfacecolor='purple',
-        markeredgecolor='black',
-        markersize=10
-    ),
-
-    Line2D(
-        [0], [0],
-        marker='o',
-        color='w',
-        label='Cluster 2',
-        markerfacecolor='gold',
-        markeredgecolor='black',
-        markersize=10
-    ),
-
-    Line2D(
-        [0], [0],
-        marker='o',
-        color='w',
-        label='Cluster 3',
-        markerfacecolor='teal',
-        markeredgecolor='black',
-        markersize=10
-    )
-]
-
-    ax.legend(
-    handles=legend_elements,
-    title="Keterangan",
-    loc="upper left",
-    bbox_to_anchor=(1.02, 1),
-    frameon=False
-)
 
 # =====================
 # Hasil Clustering
