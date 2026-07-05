@@ -387,8 +387,6 @@ df_tampil = df_cluster.copy()
 
 df_tampil = df_tampil.drop(columns=["Interpretasi"])
 
-st.subheader("📋 Tabel Hasil Clustering")
-
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.dataframe(
