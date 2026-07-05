@@ -24,10 +24,31 @@ st.set_page_config(
 
 df = pd.read_csv("dataset_clean.csv")
 
+kolom = [
+    "Kosong",
+    "Kecamatan",
+    "Negeri_2021",
+    "Negeri_2022",
+    "Negeri_2023",
+    "Negeri_2024",
+    "Jumlah_Negeri",
+    "Rata_Negeri",
+    "Swasta_2021",
+    "Swasta_2022",
+    "Swasta_2023",
+    "Swasta_2024",
+    "Jumlah_Swasta",
+    "Rata_Swasta"
+]
+
 df_excel = pd.read_excel(
     "OLAH DATA.xlsx",
-    skiprows=4
+    skiprows=5,
+    header=None,
+    names=kolom
 )
+
+df_excel = df_excel.drop(columns=["Kosong"])
 
 # Menghapus kolom kosong
 df_excel = df_excel.dropna(axis=1, how="all")
