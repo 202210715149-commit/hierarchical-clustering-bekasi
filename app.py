@@ -27,18 +27,18 @@ df = pd.read_csv("dataset_clean.csv")
 kolom = [
     "Kosong",
     "Kecamatan",
-    "Negeri_2021",
-    "Negeri_2022",
-    "Negeri_2023",
-    "Negeri_2024",
-    "Jumlah_Negeri",
-    "Rata_Negeri",
-    "Swasta_2021",
-    "Swasta_2022",
-    "Swasta_2023",
-    "Swasta_2024",
-    "Jumlah_Swasta",
-    "Rata_Swasta"
+    "Negeri 2021",
+    "Negeri 2022",
+    "Negeri 2023",
+    "Negeri 2024",
+    "Jumlah Negeri",
+    "Rata Negeri",
+    "Swasta 2021",
+    "Swasta 2022",
+    "Swasta 2023",
+    "Swasta 2024",
+    "Jumlah Swasta",
+    "Rata Swasta"
 ]
 
 df_excel = pd.read_excel(
