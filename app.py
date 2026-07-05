@@ -61,7 +61,9 @@ if menu == "🏠 Dashboard":
 
     st.markdown("""
     <h1 style='text-align:center; color:#222222;'>
-    Pengelompokan Kecamatan di Kota Bekasi Berdasarkan Jumlah Murid SMP Negeri dan Swasta Menggunakan Algoritma Hierarchical Clustering
+    Pengelompokan Kecamatan di Kota Bekasi
+    Berdasarkan Jumlah Murid SMP Negeri
+    dan Swasta Menggunakan Algoritma Hierarchical Clustering
     </h1>
     """, unsafe_allow_html=True)
 
