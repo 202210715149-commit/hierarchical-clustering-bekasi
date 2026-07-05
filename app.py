@@ -29,6 +29,12 @@ df_excel = pd.read_excel(
     skiprows=4
 )
 
+# Menghapus kolom kosong
+df_excel = df_excel.dropna(axis=1, how="all")
+
+# Menghapus baris kosong
+df_excel = df_excel.dropna(how="all")
+
 # =====================
 # Sidebar
 # =====================
