@@ -31,14 +31,16 @@ df = pd.read_csv("dataset_clean.csv")
 # Sidebar
 # =====================
 
-menu = st.sidebar.selectbox(
-    "🏠 Menu",
+st.sidebar.markdown("## 🏠 Dashboard")
+
+menu = st.sidebar.radio(
+    "",
     [
-        "📂 Dataset",
+        "🗂️ Dataset",
         "📊 Diagram Batang",
         "🌳 Dendrogram",
         "🎯 Scatter Plot",
-        "🧩 Hasil Cluster"
+        "🧩 Hasil Clustering"
     ]
 )
 
