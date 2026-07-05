@@ -46,7 +46,6 @@ menu = st.sidebar.radio(
 st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
 
 st.sidebar.markdown("""
-<hr style="margin-top:20px;margin-bottom:20px;">
 
 <div style="text-align:center; font-size:13px; color:white;">
 <b>Nikmah Azizah</b><br>
