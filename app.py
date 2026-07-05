@@ -378,14 +378,6 @@ Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripa
 }
 
     df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
-    # Menambahkan interpretasi cluster
-interpretasi = {
-    1: "Tinggi",
-    2: "Rendah",
-    3: "Sedang"
-}
-
-df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
 
 # ============================
 # Tabel
