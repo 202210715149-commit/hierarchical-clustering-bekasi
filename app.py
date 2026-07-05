@@ -129,7 +129,7 @@ if menu == "🏠 Dashboard":
 
 elif menu == "🗂️ Dataset":
 
-    st.write("Menu Dataset berhasil dipilih")
+    st.write("🗂️ Dataset")
 
     st.dataframe(df, use_container_width=True)
 
