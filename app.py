@@ -36,6 +36,7 @@ st.sidebar.markdown("## 🏠 Dashboard")
 menu = st.sidebar.radio(
     "",
     [
+        "🏠 Dashboard",
         "🗂️ Dataset",
         "📊 Diagram Batang",
         "🌳 Dendrogram",
