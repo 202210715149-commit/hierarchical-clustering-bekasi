@@ -184,8 +184,6 @@ Sebelum dilakukan proses Hierarchical Clustering, data terlebih dahulu melalui t
     height=450
 )
 
-    st.dataframe(df_tampil, use_container_width=True)
-
 # =====================
 # Diagram Batang
 # =====================
