@@ -294,6 +294,12 @@ Dendrogram memperlihatkan hubungan kemiripan antar kecamatan. Berdasarkan proses
 
     fig,ax=plt.subplots(figsize=(15,6))
 
+    ax.set_title(
+    "Dendogram Hierarchical Clustering",
+    fontsize=14,
+    pad=15
+)
+
     dendrogram(
         linked,
         labels=df["Kecamatan"].values,
