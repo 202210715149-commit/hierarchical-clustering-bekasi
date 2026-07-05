@@ -43,11 +43,11 @@ menu = st.sidebar.radio(
 )
 
 # Mendorong tulisan ke bagian bawah sidebar
-st.sidebar.markdown("<br>"*8, unsafe_allow_html=True)
+st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
 
 st.sidebar.markdown("""
 
-<div style="text-align:center; font-size:14px; color:white; opacity:0.9;">
+<div style="text-align:center; font-size:14px; color:white;">
 <b>Nikmah Azizah</b><br>
 Program Studi Informatika
 </div>
@@ -86,8 +86,7 @@ if menu == "🏠 Dashboard":
     st.subheader("📚 Tentang Hierarchical Clustering")
 
     st.write("""
-    Hierarchical Clustering merupakan metode pengelompokan data
-    berdasarkan tingkat kemiripan antar objek.
+    Hierarchical Clustering adalah metode klaster yang dilakukan secara bertahap (hirarki) dengan menggunakan konsep penggabungan dua klaster kecil yang memiliki jarak terdekat menjadi satu klaster yang lebih besar yang disebut dengan metode Agglomeratif Hierarchical Clustering atau pemecahan klaster besar ke beberapa klaster yang lebih kecil dengan dasar ketidakmiripan paling tinggi klaster-klaster lebih kecil yang disebut dengan metode Divisive. Pembentukan anggota klaster pada metode hirarki menggunakan bagan atau dendrogram
 
     Pada penelitian ini digunakan metode Agglomerative
     Hierarchical Clustering dengan Ward Linkage untuk
