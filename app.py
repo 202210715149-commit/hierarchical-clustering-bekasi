@@ -335,7 +335,6 @@ Scatter Plot menunjukkan bahwa setiap cluster memiliki pola persebaran yang berb
     ax.set_title(
     "Scatter Plot Hierarchical Clustering",
     fontsize=14,
-    fontweight="bold",
     pad=15
 )
 
