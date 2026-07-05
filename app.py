@@ -352,7 +352,7 @@ Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripa
 """)
 
     # Mengambil dua variabel
-    X = df[["Rata Negeri", "Rata Swasta"]]
+    X = df[["Rata_Negeri", "Rata_Swasta"]]
 
     # Membuat model Hierarchical Clustering
     model = AgglomerativeClustering(n_clusters=3)
