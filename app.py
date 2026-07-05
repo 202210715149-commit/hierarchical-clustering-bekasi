@@ -31,7 +31,7 @@ df = pd.read_csv("dataset_clean.csv")
 # Sidebar
 # =====================
 
-st.sidebar.markdown("## 🏠 Dashboard")
+#st.sidebar.markdown("## 🏠 Dashboard")
 
 menu = st.sidebar.radio(
     "",
