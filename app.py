@@ -387,6 +387,23 @@ interpretasi = {
 
 df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
 
+# ============================
+# Tabel
+# ============================
+
+df_tampil = df_cluster.copy()
+
+df_tampil = df_tampil.rename(columns={
+    "Rata_Negeri":"Negeri",
+    "Rata_Swasta":"Swasta"
+})
+
+df_tampil = df_tampil.drop(columns=["Interpretasi"])
+
+st.subheader("📋 Tabel Hasil Clustering")
+
+st.markdown("<br>", unsafe_allow_html=True)
+
 st.dataframe(
     df_tampil,
     use_container_width=True,
