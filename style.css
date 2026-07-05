@@ -15,7 +15,7 @@ section[data-testid="stSidebar"]{
 }
 
 section[data-testid="stSidebar"] *{
-    color: rgb(204, 229, 250);
+    color: rgb(255, 255, 255);
 }
 
 /* ===========================
