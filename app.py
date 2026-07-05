@@ -45,10 +45,81 @@ menu = st.sidebar.radio(
 )
 
 # =====================
+# Dashboard
+# =====================
+
+if menu == "🏠 Dashboard":
+
+    st.markdown("""
+    <h1 style='text-align:center; color:#1E3A8A;'>
+    Analisis Hierarchical Clustering Jumlah Murid Sekolah Negeri dan Swasta
+    <br>
+    pada 12 Kecamatan di Kota Bekasi
+    </h1>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <h3 style='text-align:center;color:gray;'>
+    Menggunakan Algoritma Hierarchical Clustering
+    </h3>
+    """, unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    col1, col2, col3 = st.columns(3)
+
+    col1.metric("🏙️ Kecamatan", "12")
+    col2.metric("📊 Variabel", "2")
+    col3.metric("🧩 Cluster", "3")
+
+    st.markdown("---")
+
+    st.subheader("📖 Tentang Penelitian")
+
+    st.write("""
+    Penelitian ini bertujuan untuk mengelompokkan 12 kecamatan di Kota Bekasi
+    berdasarkan rata-rata jumlah murid sekolah negeri dan sekolah swasta
+    menggunakan metode Hierarchical Clustering.
+    """)
+
+    st.subheader("📚 Tentang Hierarchical Clustering")
+
+    st.write("""
+    Hierarchical Clustering merupakan metode pengelompokan data
+    berdasarkan tingkat kemiripan antar objek.
+
+    Pada penelitian ini digunakan metode Agglomerative
+    Hierarchical Clustering dengan Ward Linkage untuk
+    menghasilkan 3 cluster berdasarkan dua variabel yaitu:
+
+    • Rata-rata Murid Sekolah Negeri
+
+    • Rata-rata Murid Sekolah Swasta
+    """)
+
+    st.markdown("---")
+
+    st.markdown("""
+    <div style="text-align:center">
+
+    <h3>Disusun Oleh</h3>
+
+    <h2>Nikmah Azizah</h2>
+
+    Program Studi Informatika
+
+    Universitas Bhayangkara Jakarta Raya
+
+    2026
+
+    </div>
+    """, unsafe_allow_html=True)
+
+# =====================
 # Dataset
 # =====================
 
-if menu=="📂 Dataset":
+elif menu=="📂 Dataset":
 
     st.subheader("📂 Dataset")
 
