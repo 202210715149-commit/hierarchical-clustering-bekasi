@@ -171,6 +171,8 @@ Dataset yang digunakan dalam penelitian ini merupakan data jumlah murid SMP Nege
 Dataset ini menjadi data awal (input) yang digunakan dalam proses Hierarchical Clustering untuk mengelompokkan kecamatan berdasarkan karakteristik jumlah murid.
 """)
 
+    st.caption("💡 Dataset ini merupakan data asli sebelum dilakukan proses clustering.")
+
     df_tampil = df_excel.copy()
 
     # Nomor urut mulai dari 1
@@ -190,6 +192,14 @@ elif menu=="📊 Diagram Batang":
 **Penjelasan Diagram Batang**
 
 Diagram batang digunakan untuk membandingkan rata-rata jumlah murid SMP Negeri dan SMP Swasta pada setiap kecamatan di Kota Bekasi. Visualisasi ini memudahkan pengguna dalam melihat perbedaan jumlah murid antar kecamatan sehingga karakteristik setiap wilayah dapat diamati sebelum dilakukan proses clustering.
+""")
+
+    st.caption("📈 Grafik menunjukkan perbandingan rata-rata jumlah murid pada masing-masing kecamatan.")
+
+    st.success("""
+**Kesimpulan Singkat**
+
+Grafik menunjukkan bahwa rata-rata jumlah murid pada setiap kecamatan memiliki variasi yang cukup besar. Perbedaan ini menjadi dasar dalam proses pengelompokan menggunakan Hierarchical Clustering.
 """)
 
     x = np.arange(len(df))
@@ -247,6 +257,14 @@ elif menu=="🌳 Dendrogram":
 Dendrogram merupakan visualisasi hasil Hierarchical Clustering yang menunjukkan proses penggabungan antar kecamatan berdasarkan tingkat kemiripan data. Semakin rendah posisi penggabungan pada dendrogram, semakin tinggi tingkat kemiripan antar kecamatan tersebut. Pada penelitian ini dendrogram digunakan untuk membantu menentukan jumlah cluster yang akan dibentuk.
 """)
 
+    st.caption("🌳 Dendrogram membantu menunjukkan proses pembentukan 3 cluster pada penelitian ini.")
+
+    st.success("""
+**Kesimpulan Singkat**
+
+Dendrogram memperlihatkan hubungan kemiripan antar kecamatan. Berdasarkan proses penggabungan tersebut, dipilih 3 cluster sebagai hasil akhir penelitian.
+""")
+
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
     linked=linkage(X,method="ward")
@@ -273,6 +291,14 @@ elif menu=="🎯 Scatter Plot":
 **Penjelasan Scatter Plot**
 
 Scatter plot digunakan untuk menampilkan hasil pengelompokan (cluster) dalam bentuk titik berdasarkan dua variabel, yaitu rata-rata jumlah murid SMP Negeri dan rata-rata jumlah murid SMP Swasta. Setiap warna menunjukkan kelompok (cluster) yang berbeda sehingga memudahkan dalam melihat persebaran data dan hubungan antar kecamatan.
+""")
+
+    st.caption("🎨 Warna yang berbeda menunjukkan kelompok (cluster) yang berbeda.")
+
+    st.success("""
+**Kesimpulan Singkat**
+
+Scatter Plot menunjukkan bahwa setiap cluster memiliki pola persebaran yang berbeda berdasarkan rata-rata jumlah murid SMP Negeri dan SMP Swasta.
 """)
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
@@ -315,6 +341,14 @@ elif menu == "🧩 Hasil Clustering":
 **Penjelasan Hasil Clustering**
 
 Halaman ini menampilkan hasil akhir proses Hierarchical Clustering berupa pembagian 12 kecamatan ke dalam 3 cluster. Setiap cluster berisi kecamatan yang memiliki karakteristik jumlah murid yang relatif mirip berdasarkan dua variabel penelitian, yaitu rata-rata jumlah murid SMP Negeri dan SMP Swasta. Hasil ini dapat digunakan sebagai dasar analisis untuk mengetahui karakteristik masing-masing kelompok kecamatan.
+""")
+
+    st.caption("🧩 Hasil clustering dapat digunakan sebagai dasar analisis karakteristik setiap kelompok kecamatan.")
+
+    st.success("""
+**Kesimpulan Singkat**
+
+Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripan karakteristik jumlah murid. Setiap cluster dapat digunakan sebagai dasar analisis lebih lanjut mengenai kondisi pendidikan di masing-masing wilayah.
 """)
 
     # Mengambil dua variabel
