@@ -79,9 +79,9 @@ st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
 
 st.sidebar.markdown("""
 
-<div style="text-align:center; font-size:14px; color:white;">
-<b>Nikmah Azizah</b><br>
-Program Studi Informatika
+<div class="sidebar-footer">
+    <b>Nikmah Azizah</b><br>
+    Program Studi Informatika
 </div>
 """, unsafe_allow_html=True)
 
