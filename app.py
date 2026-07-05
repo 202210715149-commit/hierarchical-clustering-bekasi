@@ -379,6 +379,9 @@ Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripa
 
     df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
 
+
+
+
 # ============================
 # Tabel
 # ============================
@@ -388,7 +391,8 @@ df_tampil = df_cluster.copy()
 # Mengubah nama kolom agar lebih jelas
 df_tampil = df_tampil.rename(columns={
     "Rata_Negeri": "Rata-rata Negeri",
-    "Rata_Swasta": "Rata-rata Swasta"
+    "Rata_Swasta": "Rata-rata Swasta",
+    "Interpretasi": "Kategori"
 })
 
 st.markdown("<br>", unsafe_allow_html=True)
