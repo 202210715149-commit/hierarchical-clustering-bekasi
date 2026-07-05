@@ -378,6 +378,63 @@ Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripa
 }
 
     df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
-    st.dataframe(df_cluster, use_container_width=True)
+    # Menambahkan interpretasi cluster
+interpretasi = {
+    1: "Tinggi",
+    2: "Rendah",
+    3: "Sedang"
+}
 
-    st.success("Jumlah Cluster yang terbentuk : 3")
+df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
+
+# ============================
+# Statistik Cluster
+# ============================
+
+cluster1 = len(df_cluster[df_cluster["Cluster"] == 1])
+cluster2 = len(df_cluster[df_cluster["Cluster"] == 2])
+cluster3 = len(df_cluster[df_cluster["Cluster"] == 3])
+
+col1, col2, col3 = st.columns(3)
+
+col1.metric("🟢 Cluster 1", cluster1)
+col2.metric("🟡 Cluster 2", cluster2)
+col3.metric("🔵 Cluster 3", cluster3)
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# ============================
+# Tabel
+# ============================
+
+df_tampil = df_cluster.copy()
+
+df_tampil = df_tampil.rename(columns={
+    "Rata_Negeri":"Negeri",
+    "Rata_Swasta":"Swasta"
+})
+
+df_tampil = df_tampil.drop(columns=["Interpretasi"])
+
+st.subheader("📋 Tabel Hasil Clustering")
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+st.dataframe(
+    df_tampil,
+    use_container_width=True
+)
+
+# ============================
+# Keterangan
+# ============================
+
+st.info("""
+📌 **Keterangan Cluster**
+
+🟢 Cluster 1 : Tinggi
+
+🟡 Cluster 2 : Rendah
+
+🔵 Cluster 3 : Sedang
+""")
