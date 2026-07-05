@@ -332,6 +332,13 @@ Scatter Plot menunjukkan bahwa setiap cluster memiliki pola persebaran yang berb
 
     fig,ax=plt.subplots(figsize=(15,6))
 
+    ax.set_title(
+    "Scatter Plot Hierarchical Clustering",
+    fontsize=14,
+    fontweight="bold",
+    pad=15
+)
+
     scatter=ax.scatter(
         df["Rata_Negeri"],
         df["Rata_Swasta"],
