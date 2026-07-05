@@ -288,6 +288,8 @@ Dendrogram merupakan visualisasi hasil Hierarchical Clustering yang menunjukkan 
 Dendrogram memperlihatkan hubungan kemiripan antar kecamatan. Berdasarkan proses penggabungan tersebut, dipilih 3 cluster sebagai hasil akhir penelitian.
 """)
 
+    ax.set_title("Dendogram Hierarchical Clustering")
+
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
     linked=linkage(X,method="ward")
@@ -330,7 +332,7 @@ Scatter Plot menunjukkan bahwa setiap cluster memiliki pola persebaran yang berb
 
     cluster=model.fit_predict(X)
 
-    fig,ax=plt.subplots(figsize=(8,6))
+    fig,ax=plt.subplots(figsize=(15,6))
 
     scatter=ax.scatter(
         df["Rata_Negeri"],
