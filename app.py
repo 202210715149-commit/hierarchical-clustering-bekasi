@@ -90,20 +90,15 @@ if menu == "🏠 Dashboard":
     st.markdown("---")
 
     st.markdown("""
-    <div style="text-align:center">
-
-    <h3>Disusun Oleh</h3>
-
-    <h2>Nikmah Azizah</h2>
-
-    Program Studi Informatika
-
-    Universitas Bhayangkara Jakarta Raya
-
-    2026
-
-    </div>
-    """, unsafe_allow_html=True)
+<div style="
+    text-align:left;
+    color:gray;
+    font-size:15px;
+    margin-top:20px;
+">
+👩‍🎓 <b>Nikmah Azizah</b> - Program Studi Informatika
+</div>
+""", unsafe_allow_html=True)
 
 # =====================
 # Dataset
