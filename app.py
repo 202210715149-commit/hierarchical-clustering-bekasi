@@ -241,19 +241,33 @@ elif menu=="🎯 Scatter Plot":
     st.pyplot(fig)
 
 # =====================
-# Hasil Cluster
+# Hasil Clustering
 # =====================
 
-elif menu=="🧩 Hasil Cluster":
+elif menu == "🧩 Hasil Clustering":
 
     st.subheader("🧩 Hasil Clustering")
 
-    X=df[["Rata_Negeri","Rata_Swasta"]]
+    # Mengambil dua variabel
+    X = df[["Rata_Negeri", "Rata_Swasta"]]
 
-    model=AgglomerativeClustering(n_clusters=3)
+    # Membuat model Hierarchical Clustering
+    model = AgglomerativeClustering(n_clusters=3)
 
-    df["Cluster"]=model.fit_predict(X)+1
+    # Menentukan cluster
+    cluster = model.fit_predict(X)
 
-    st.dataframe(df,use_container_width=True)
+    # Menambahkan kolom Cluster
+    df_cluster = df.copy()
+    df_cluster["Cluster"] = cluster + 1
 
-    st.success("Jumlah Cluster : 3")
+    # Mengurutkan berdasarkan cluster
+    df_cluster = df_cluster.sort_values("Cluster").reset_index(drop=True)
+
+    # Nomor urut mulai dari 1
+    df_cluster.index = df_cluster.index + 1
+
+    # Menampilkan tabel
+    st.dataframe(df_cluster, use_container_width=True)
+
+    st.success("Jumlah Cluster yang terbentuk : 3")
