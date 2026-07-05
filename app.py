@@ -228,7 +228,7 @@ Grafik menunjukkan bahwa rata-rata jumlah murid pada setiap kecamatan memiliki v
     x = np.arange(len(df))
     width = 0.35
 
-    fig, ax = plt.subplots(figsize=(9,6))
+    fig, ax = plt.subplots(figsize=(5,6))
 
     ax.bar(
         x-width/2,
