@@ -163,6 +163,14 @@ elif menu == "🗂️ Dataset":
 
     st.subheader("🗂️ Dataset Penelitian")
 
+    st.info("""
+**Penjelasan Dataset**
+
+Dataset yang digunakan dalam penelitian ini merupakan data jumlah murid SMP Negeri dan SMP Swasta pada 12 kecamatan di Kota Bekasi selama periode 2021–2024. Data diperoleh dari Badan Pusat Statistik (BPS) dan Data Pokok Pendidikan (Dapodik).
+
+Dataset ini menjadi data awal (input) yang digunakan dalam proses Hierarchical Clustering untuk mengelompokkan kecamatan berdasarkan karakteristik jumlah murid.
+""")
+
     df_tampil = df_excel.copy()
 
     # Nomor urut mulai dari 1
