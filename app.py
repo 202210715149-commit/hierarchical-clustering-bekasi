@@ -170,6 +170,7 @@ Dataset yang digunakan dalam penelitian ini merupakan data jumlah murid SMP Nege
 
 Dataset ini menjadi data awal (input) yang digunakan dalam proses Hierarchical Clustering untuk mengelompokkan kecamatan berdasarkan karakteristik jumlah murid.
 Dataset yang ditampilkan merupakan data penelitian yang telah melalui tahap preprocessing berupa perhitungan jumlah dan rata-rata jumlah murid SMP Negeri dan SMP Swasta pada masing-masing kecamatan. Hasil preprocessing inilah yang selanjutnya digunakan sebagai input dalam proses Hierarchical Clustering.
+Kolom Jumlah ditampilkan sebagai hasil perhitungan agregasi data, sedangkan kolom Rata-rata merupakan variabel yang digunakan sebagai input dalam proses Hierarchical Clustering.
 """)
 
     st.caption("💡 Dataset ini merupakan data asli sebelum dilakukan proses clustering.")
