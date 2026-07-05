@@ -62,13 +62,6 @@ df_excel = df_excel.dropna(how="all")
 
 #st.sidebar.markdown("## 🏠 Dashboard")
 
-st.sidebar.markdown("""
-<div style="text-align:center;color:white;">
-<h3>📊</h3>
-<h4>Hierarchical<br>Clustering</h4>
-</div>
-""", unsafe_allow_html=True)
-
 menu = st.sidebar.radio(
     "",
     [
