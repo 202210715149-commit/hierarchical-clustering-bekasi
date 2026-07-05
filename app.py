@@ -127,11 +127,11 @@ if menu == "🏠 Dashboard":
 # Dataset
 # =====================
 
-elif menu=="📂 Dataset":
+elif menu == "🗂️ Dataset":
 
-    st.subheader("📂 Dataset")
+    st.write("Menu Dataset berhasil dipilih")
 
-    st.dataframe(df,use_container_width=True)
+    st.dataframe(df, use_container_width=True)
 
 # =====================
 # Diagram Batang
