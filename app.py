@@ -42,6 +42,18 @@ menu = st.sidebar.radio(
     ]
 )
 
+# Mendorong tulisan ke bagian bawah sidebar
+st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
+
+st.sidebar.markdown("""
+<hr style="margin-top:20px;margin-bottom:10px;">
+
+<div style="text-align:center; font-size:13px; color:white;">
+<b>Nikmah Azizah</b><br>
+Program Studi Informatika
+</div>
+""", unsafe_allow_html=True)
+
 # =====================
 # Dashboard
 # =====================
@@ -88,17 +100,6 @@ if menu == "🏠 Dashboard":
     """)
 
     st.markdown("---")
-
-    st.markdown("""
-<div style="
-    text-align:left;
-    color:gray;
-    font-size:15px;
-    margin-top:20px;
-">
-👩‍🎓 <b>Nikmah Azizah</b> - Program Studi Informatika
-</div>
-""", unsafe_allow_html=True)
 
 # =====================
 # Dataset
