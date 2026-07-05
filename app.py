@@ -1,5 +1,12 @@
 import streamlit as st
 import pandas as pd
+import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+from scipy.cluster.hierarchy import linkage, dendrogram
+from sklearn.cluster import AgglomerativeClustering
 
 # Memanggil CSS
 with open("style.css") as f:
@@ -25,7 +32,7 @@ df = pd.read_csv("dataset_clean.csv")
 # =====================
 
 menu = st.sidebar.selectbox(
-    "Menu",
+    "🏠 Menu",
     [
         "Dataset",
         "Diagram Batang",
@@ -39,9 +46,9 @@ menu = st.sidebar.selectbox(
 # Dataset
 # =====================
 
-if menu=="Dataset":
+if menu=="📂 Dataset":
 
-    st.subheader("Dataset")
+    st.subheader("📂 Dataset")
 
     st.dataframe(df,use_container_width=True)
 
@@ -49,23 +56,46 @@ if menu=="Dataset":
 # Diagram Batang
 # =====================
 
-elif menu=="Diagram Batang":
+elif menu=="📊 Diagram Batang":
 
-    st.subheader("Diagram Batang")
+    st.subheader("📊 Diagram Batang")
 
-    fig, ax = plt.subplots(figsize=(10,5))
+    x = np.arange(len(df))
+    width = 0.35
 
-    x = range(len(df))
+    fig, ax = plt.subplots(figsize=(9,6))
 
-    ax.bar(x,df["Rata_Negeri"],label="Negeri")
+    ax.bar(
+        x-width/2,
+        df["Rata_Negeri"],
+        width,
+        color="#1f77b4",
+        label="Negeri"
+    )
 
-    ax.bar(x,df["Rata_Swasta"],
-           bottom=df["Rata_Negeri"],
-           label="Swasta")
+    ax.bar(
+        x+width/2,
+        df["Rata_Swasta"],
+        width,
+        color="#ff7f0e",
+        label="Swasta"
+    )
 
     ax.set_xticks(x)
 
-    ax.set_xticklabels(df["Kecamatan"],rotation=60)
+    ax.set_xticklabels(
+        df["Kecamatan"],
+        rotation=35,
+        ha="right"
+    )
+
+    ax.set_title("Perbandingan Rata-rata Murid Negeri dan Swasta")
+
+    ax.set_xlabel("Kecamatan")
+
+    ax.set_ylabel("Rata-rata Murid")
+
+    ax.grid(axis="y", linestyle="--", alpha=0.4)
 
     ax.legend()
 
@@ -75,9 +105,9 @@ elif menu=="Diagram Batang":
 # Dendrogram
 # =====================
 
-elif menu=="Dendrogram":
+elif menu=="📈 Dendrogram":
 
-    st.subheader("Dendrogram")
+    st.subheader("📈 Dendrogram")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
@@ -97,9 +127,9 @@ elif menu=="Dendrogram":
 # Scatter Plot
 # =====================
 
-elif menu=="Scatter Plot":
+elif menu=="📈 Scatter Plot":
 
-    st.subheader("Scatter Plot")
+    st.subheader("📈 Scatter Plot")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
@@ -133,9 +163,9 @@ elif menu=="Scatter Plot":
 # Hasil Cluster
 # =====================
 
-elif menu=="Hasil Cluster":
+elif menu=="🌳 Hasil Cluster":
 
-    st.subheader("Hasil Clustering")
+    st.subheader("🌳 Hasil Clustering")
 
     X=df[["Rata_Negeri","Rata_Swasta"]]
 
