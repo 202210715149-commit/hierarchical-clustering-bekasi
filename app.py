@@ -292,7 +292,7 @@ Dendrogram memperlihatkan hubungan kemiripan antar kecamatan. Berdasarkan proses
 
     linked=linkage(X,method="ward")
 
-    fig,ax=plt.subplots(figsize=(10,5))
+    fig,ax=plt.subplots(figsize=(15,6))
 
     dendrogram(
         linked,
