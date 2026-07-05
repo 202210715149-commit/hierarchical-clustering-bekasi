@@ -24,7 +24,10 @@ st.set_page_config(
 
 df = pd.read_csv("dataset_clean.csv")
 
-df_excel = pd.read_excel("OLAH DATA.xlsx")
+df_excel = pd.read_excel(
+    "OLAH DATA.xlsx",
+    skiprows=4
+)
 
 # =====================
 # Sidebar
