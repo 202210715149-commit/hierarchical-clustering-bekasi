@@ -26,7 +26,7 @@ df = pd.read_csv("dataset_clean.csv")
 
 df_excel = pd.read_excel(
     "OLAH DATA.xlsx",
-    skiprows=5
+    skiprows=4
 )
 
 # =====================
