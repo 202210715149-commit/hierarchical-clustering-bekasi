@@ -131,10 +131,10 @@ if menu == "🏠 Dashboard":
 
 elif menu == "🗂️ Dataset":
 
-    st.write("🗂️ Dataset Penelitian")
+    st.subheader("🗂️ Dataset Penelitian")
 
-    df_tampil = df.copy()
-        
+    df_tampil = df_excel.copy()
+
     # Nomor urut mulai dari 1
     df_tampil.index = range(1, len(df_tampil) + 1)
 
