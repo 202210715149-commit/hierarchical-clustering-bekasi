@@ -399,5 +399,5 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.dataframe(
     df_tampil,
     use_container_width=True,
-    height=454
+    height=452
 )
