@@ -394,7 +394,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.dataframe(
     df_tampil,
     use_container_width=True,
-    height=440
+    height=450
 )
 
 st.success("Jumlah Cluster yang terbentuk : 3")
