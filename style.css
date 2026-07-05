@@ -23,19 +23,19 @@ section[data-testid="stSidebar"] *{
 =========================== */
 
 h1{
-    color:#000000;
+    color:#0F172A;
     text-align:center;
     font-size:40px;
     font-weight:bold;
 }
 
 h2{
-    color:#000000;
+    color:#1eafaf;
     font-weight:bold;
 }
 
 h3{
-    color:#000000;
+    color:#2563EB;
 }
 
 /* ===========================
