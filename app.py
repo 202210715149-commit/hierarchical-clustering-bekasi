@@ -370,9 +370,6 @@ Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripa
     # Nomor urut mulai dari 1
     df_cluster.index = df_cluster.index + 1
 
-    # Menampilkan tabel
-    st.dataframe(df_cluster, use_container_width=True)
-
     # Menambahkan interpretasi cluster
     interpretasi = {
     1: "Tinggi",
@@ -381,5 +378,6 @@ Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripa
 }
 
     df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
+    st.dataframe(df_cluster, use_container_width=True)
 
     st.success("Jumlah Cluster yang terbentuk : 3")
