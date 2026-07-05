@@ -133,6 +133,9 @@ elif menu == "🗂️ Dataset":
 
     df_tampil = df.copy()
 
+    if "Cluster" in df_tampil.columns:
+        df_tampil = df_tampil.drop(columns=["Cluster"])
+        
     # Nomor urut mulai dari 1
     df_tampil.index = range(1, len(df_tampil) + 1)
 
