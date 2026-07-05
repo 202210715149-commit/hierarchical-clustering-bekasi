@@ -53,7 +53,7 @@ if menu == "🏠 Dashboard":
 
     st.markdown("""
     <h1 style='text-align:center; color:#1E3A8A;'>
-    Analisis Hierarchical Clustering Jumlah Murid Sekolah Negeri dan Swasta
+    Pengelompokan Kecamatan di Kota Bekasi Berdasarkan Jumlah Murid SMP Negeri dan Swasta Menggunakan Algoritma Hierarchical Clustering
     <br>
     pada 12 Kecamatan di Kota Bekasi
     </h1>
