@@ -180,36 +180,6 @@ Sebelum dilakukan proses Hierarchical Clustering, data terlebih dahulu melalui t
 
     st.dataframe(df_tampil, use_container_width=True)
 
-
-
-    # ============================
-    # Tabel
-    # ============================
-
-    df_tampil = df_cluster.copy()
-
-    # Mengubah nama kolom agar lebih jelas
-    df_tampil = df_tampil.rename(columns={
-    "Negeri 2021": "Murid Negeri 2021",
-    "Negeri 2022": "Murid Negeri 2022",
-    "Negeri 2023": "Murid Negeri 2023",
-    "Negeri 2024": "Murid Negeri 2024",
-    "Swasta 2021": "Murid Swasta 2021",
-    "Swasta 2022": "Murid Swasta 2022",
-    "Swasta 2023": "Murid Swasta 2023",
-    "Swasta 2024": "Murid Swasta 2024",
-    "Rata Negeri": "Rata-rata Negeri",
-    "Rata Swasta": "Rata-rata Swasta",
-    })
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    st.dataframe(
-    df_tampil,
-    use_container_width=True,
-    height=450
-    )
-
 # =====================
 # Diagram Batang
 # =====================
