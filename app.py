@@ -178,12 +178,6 @@ Sebelum dilakukan proses Hierarchical Clustering, data terlebih dahulu melalui t
     # Nomor urut mulai dari 1
     df_tampil.index = range(1, len(df_tampil) + 1)
 
-    st.dataframe(
-    df_tampil,
-    use_container_width=True,
-    height=450
-)
-
     df_tampil = df_tampil.rename(columns={
 
     "Negeri 2021": "Murid Negeri 2021",
@@ -202,6 +196,12 @@ Sebelum dilakukan proses Hierarchical Clustering, data terlebih dahulu melalui t
     "Rata Negeri": "Rata-rata Negeri",
     "Rata Swasta": "Rata-rata Swasta"
 })
+
+    st.dataframe(
+    df_tampil,
+    use_container_width=True,
+    height=450
+)
 
 # =====================
 # Diagram Batang
