@@ -62,6 +62,13 @@ df_excel = df_excel.dropna(how="all")
 
 #st.sidebar.markdown("## 🏠 Dashboard")
 
+st.sidebar.markdown("""
+<div style="text-align:center;color:white;">
+<h3>📊</h3>
+<h4>Hierarchical<br>Clustering</h4>
+</div>
+""", unsafe_allow_html=True)
+
 menu = st.sidebar.radio(
     "",
     [
@@ -73,13 +80,6 @@ menu = st.sidebar.radio(
         "🧩 Hasil Clustering"
     ]
 )
-
-st.sidebar.markdown("""
-<div style="text-align:center;color:white;">
-<h3>📊</h3>
-<h4>Hierarchical<br>Clustering</h4>
-</div>
-""", unsafe_allow_html=True)
 
 # Mendorong tulisan ke bagian bawah sidebar
 st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
