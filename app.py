@@ -303,11 +303,6 @@ Dendrogram memperlihatkan hubungan kemiripan antar kecamatan. Berdasarkan proses
     ax.set_xlabel("Kecamatan", fontsize=11)
     ax.set_ylabel("Jarak Euclidean", fontsize=11)
 
-    # Agar layout tidak terpotong
-    plt.tight_layout()
-
-    st.pyplot(fig)
-
     dendrogram(
         linked,
         labels=df["Kecamatan"].values,
