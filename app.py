@@ -19,7 +19,7 @@ st.set_page_config(
 )
 
 st.title("📊 Hierarchical Clustering")
-st.write("### Pengelompokan 12 Kecamatan Berdasarkan Sekolah Negeri dan Swasta")
+st.write("### PENGELOMPOKAN KECAMATAN DI KOTA BEKASI BERDASARKAN JUMLAH MURID SMP NEGERI DAN SWASTA MENGGUNAKAN ALGORITMA HIERARCHICAL CLUSTERING")
 
 # =====================
 # Load Data
