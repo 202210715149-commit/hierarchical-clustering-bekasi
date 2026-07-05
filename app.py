@@ -43,11 +43,15 @@ menu = st.sidebar.radio(
 )
 
 # Mendorong tulisan ke bagian bawah sidebar
-st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
+st.sidebar.markdown("<br>"*8, unsafe_allow_html=True)
 
 st.sidebar.markdown("""
-
-<div style="text-align:center; font-size:13px; color:white;">
+<div style="
+text-align:center;
+font-size:14px;
+color:white;
+opacity:0.9;
+">
 <b>Nikmah Azizah</b><br>
 Program Studi Informatika
 </div>
