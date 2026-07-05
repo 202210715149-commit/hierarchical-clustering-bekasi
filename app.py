@@ -43,7 +43,7 @@ menu = st.sidebar.radio(
 )
 
 # Mendorong tulisan ke bagian bawah sidebar
-st.sidebar.markdown("<br>"*15, unsafe_allow_html=True)
+st.sidebar.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
 
 st.sidebar.markdown("""
 <hr style="margin-top:20px;margin-bottom:10px;">
