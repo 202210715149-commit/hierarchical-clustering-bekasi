@@ -79,22 +79,46 @@ if menu == "🏠 Dashboard":
 
     st.write("""
     Penelitian ini bertujuan untuk mengelompokkan 12 kecamatan di Kota Bekasi
-    berdasarkan rata-rata jumlah murid sekolah negeri dan sekolah swasta
-    menggunakan metode Hierarchical Clustering.
+    berdasarkan rata-rata jumlah murid SMP Negeri dan SMP Swasta menggunakan
+    algoritma Hierarchical Clustering. Data yang digunakan merupakan data jumlah
+    murid selama periode 2021–2024 yang diperoleh dari Badan Pusat Statistik (BPS)
+    dan Data Pokok Pendidikan (Dapodik).
+
+    Perbedaan jumlah murid antar kecamatan menyebabkan karakteristik setiap wilayah
+    menjadi berbeda. Oleh karena itu, diperlukan proses pengelompokan (clustering)
+    agar kecamatan yang memiliki karakteristik jumlah murid yang mirip dapat berada
+    dalam satu kelompok. Hasil pengelompokan ini diharapkan dapat memberikan
+    gambaran mengenai pola persebaran jumlah murid di Kota Bekasi.
+
+    Melalui visualisasi berupa diagram batang, dendrogram, scatter plot, dan hasil
+    cluster, penelitian ini dapat membantu memahami karakteristik masing-masing
+    kecamatan sehingga dapat menjadi informasi pendukung dalam evaluasi pemerataan
+    pendidikan serta pengambilan keputusan oleh pihak terkait.
     """)
 
     st.subheader("📚 Tentang Hierarchical Clustering")
 
     st.write("""
-    Hierarchical Clustering adalah metode klaster yang dilakukan secara bertahap (hirarki) dengan menggunakan konsep penggabungan dua klaster kecil yang memiliki jarak terdekat menjadi satu klaster yang lebih besar yang disebut dengan metode Agglomeratif Hierarchical Clustering atau pemecahan klaster besar ke beberapa klaster yang lebih kecil dengan dasar ketidakmiripan paling tinggi klaster-klaster lebih kecil yang disebut dengan metode Divisive. Pembentukan anggota klaster pada metode hirarki menggunakan bagan atau dendrogram
+    Hierarchical Clustering merupakan salah satu metode dalam data mining yang
+    digunakan untuk mengelompokkan data berdasarkan tingkat kemiripan antar objek.
+    Metode ini membentuk struktur pengelompokan secara bertahap sehingga hubungan
+    antar data dapat divisualisasikan dalam bentuk dendrogram.
 
-    Pada penelitian ini digunakan metode Agglomerative
-    Hierarchical Clustering dengan Ward Linkage untuk
-    menghasilkan 3 cluster berdasarkan dua variabel yaitu:
+    Pada penelitian ini digunakan metode Agglomerative Hierarchical Clustering,
+    yaitu proses pengelompokan dimulai dari setiap data sebagai satu cluster
+    kemudian digabungkan secara bertahap berdasarkan jarak terdekat menggunakan
+    Ward Linkage dan Euclidean Distance hingga terbentuk tiga cluster.
 
-    • Rata-rata Murid Sekolah Negeri
+    Variabel yang digunakan dalam penelitian ini terdiri dari:
 
-    • Rata-rata Murid Sekolah Swasta
+    • Rata-rata jumlah murid SMP Negeri
+
+    • Rata-rata jumlah murid SMP Swasta
+
+    Hasil clustering memberikan informasi mengenai kecamatan yang memiliki
+    karakteristik jumlah murid tinggi, sedang, maupun rendah. Informasi tersebut
+    ditampilkan dalam bentuk tabel hasil clustering, diagram batang, dendrogram,
+    serta scatter plot sehingga lebih mudah dipahami oleh pengguna.
     """)
 
     st.markdown("---")
