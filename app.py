@@ -199,7 +199,7 @@ Sebelum dilakukan proses Hierarchical Clustering, data terlebih dahulu melalui t
     st.dataframe(
     df_tampil,
     use_container_width=True,
-    height=420
+    height=450
 )
 
 # =====================
@@ -381,9 +381,9 @@ SMP Swasta. Setiap cluster memiliki karakteristik yang berbeda sehingga dapat
 diinterpretasikan sebagai cluster tinggi, sedang, dan rendah.
     """)
 
-    # =====================================================
-    # DATA
-    # =====================================================
+# =====================================================
+# DATA
+# =====================================================
 
     X = df[["Rata_Negeri","Rata_Swasta"]]
 
@@ -397,3 +397,154 @@ diinterpretasikan sebagai cluster tinggi, sedang, dan rendah.
     df_cluster = df.copy()
 
     df_cluster["Cluster"] = cluster + 1
+
+# =====================================================
+# MAPPING CLUSTER
+# =====================================================
+
+    interpretasi = {
+        1:"Tinggi",
+        2:"Sedang",
+        3:"Rendah"
+    }
+
+    df_cluster["Kategori"] = df_cluster["Cluster"].map(
+        interpretasi
+    )
+
+    df_cluster = df_cluster.sort_values(
+        "Cluster"
+    ).reset_index(drop=True)
+
+    df_cluster.index += 1
+
+    st.markdown("### 📋 Tabel Hasil Clustering")
+
+    tampil = df_cluster[
+        [
+            "Kecamatan",
+            "Rata_Negeri",
+            "Rata_Swasta",
+            "Cluster",
+            "Kategori"
+        ]
+    ]
+
+    tampil = tampil.rename(columns={
+        "Rata_Negeri":"Rata-rata Negeri",
+        "Rata_Swasta":"Rata-rata Swasta"
+    })
+
+    st.dataframe(
+        tampil,
+        use_container_width=True
+    )
+    
+    st.markdown("---")
+
+    st.markdown("## 📊 Karakteristik Cluster")
+
+    karakteristik = df_cluster.groupby("Cluster").agg(
+
+        Jumlah_Kecamatan=("Kecamatan","count"),
+
+        Mean_Negeri=("Rata_Negeri","mean"),
+
+        Mean_Swasta=("Rata_Swasta","mean"),
+
+        Min_Negeri=("Rata_Negeri","min"),
+
+        Max_Negeri=("Rata_Negeri","max"),
+
+        Min_Swasta=("Rata_Swasta","min"),
+
+        Max_Swasta=("Rata_Swasta","max")
+
+    ).round(2)
+
+    karakteristik["Kategori"]=[
+        "Tinggi",
+        "Sedang",
+        "Rendah"
+    ]
+
+    karakteristik["Range Negeri"] = (
+
+        karakteristik["Min_Negeri"].astype(str)
+
+        + " - "
+
+        + karakteristik["Max_Negeri"].astype(str)
+
+    )
+
+    karakteristik["Range Swasta"]=(
+
+        karakteristik["Min_Swasta"].astype(str)
+
+        + " - "
+
+        + karakteristik["Max_Swasta"].astype(str)
+
+    )
+
+    st.dataframe(
+
+        karakteristik[
+            [
+                "Kategori",
+                "Jumlah_Kecamatan",
+                "Mean_Negeri",
+                "Mean_Swasta",
+                "Range Negeri",
+                "Range Swasta"
+            ]
+        ],
+
+        use_container_width=True
+
+    )
+
+    st.markdown("---")
+
+    st.markdown("## 📍 Anggota Tiap Cluster")
+
+    for c in sorted(df_cluster["Cluster"].unique()):
+
+        st.markdown(
+            f"### Cluster {c} ({interpretasi[c]})"
+        )
+
+        anggota = df_cluster[
+            df_cluster["Cluster"]==c
+        ][
+            [
+                "Kecamatan",
+                "Rata_Negeri",
+                "Rata_Swasta"
+            ]
+        ]
+
+        anggota = anggota.rename(columns={
+            "Rata_Negeri":"Rata-rata Negeri",
+            "Rata_Swasta":"Rata-rata Swasta"
+        })
+
+        st.dataframe(
+            anggota,
+            use_container_width=True
+        )
+
+        st.success("""
+
+Cluster 1 : Tinggi
+
+Cluster 2 : Sedang
+
+Cluster 3 : Rendah
+
+Pengelompokan dilakukan berdasarkan rata-rata jumlah murid SMP Negeri
+dan SMP Swasta menggunakan algoritma Hierarchical Clustering
+dengan metode Ward Linkage.
+
+    """)
