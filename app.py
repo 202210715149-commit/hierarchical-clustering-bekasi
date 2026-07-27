@@ -113,8 +113,7 @@ if menu == "🏠 Dashboard":
     Penelitian ini bertujuan untuk mengelompokkan 12 kecamatan di Kota Bekasi
     berdasarkan rata-rata jumlah murid SMP Negeri dan SMP Swasta menggunakan
     algoritma Hierarchical Clustering. Data yang digunakan merupakan data jumlah
-    murid selama periode 2021–2024 yang diperoleh dari Badan Pusat Statistik (BPS)
-    dan Data Pokok Pendidikan (Dapodik).
+    murid selama periode 2021–2024 yang diperoleh dari Website Badan Pusat Statistik (BPS).
 
     Perbedaan jumlah murid antar kecamatan menyebabkan karakteristik setiap wilayah
     menjadi berbeda. Oleh karena itu, diperlukan proses pengelompokan (clustering)
@@ -136,7 +135,7 @@ if menu == "🏠 Dashboard":
     Metode ini membentuk struktur pengelompokan secara bertahap sehingga hubungan
     antar data dapat divisualisasikan dalam bentuk dendrogram.
 
-    Pada penelitian ini digunakan metode Agglomerative Hierarchical Clustering,
+    Pada penelitian ini digunakan metode Hierarchical Clustering,
     yaitu proses pengelompokan dimulai dari setiap data sebagai satu cluster
     kemudian digabungkan secara bertahap berdasarkan jarak terdekat menggunakan
     Ward Linkage dan Euclidean Distance hingga terbentuk tiga cluster.
