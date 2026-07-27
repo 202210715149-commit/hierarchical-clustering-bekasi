@@ -367,78 +367,34 @@ Scatter Plot menunjukkan bahwa setiap cluster memiliki pola persebaran yang berb
 
     st.pyplot(fig)
 
-# =====================
-# Hasil Clustering
-# =====================
+# =====================================================
+# HASIL CLUSTERING
+# =====================================================
 
 elif menu == "🧩 Hasil Clustering":
 
     st.subheader("🧩 Hasil Clustering")
 
     st.info("""
-**Penjelasan Hasil Clustering**
+Hasil akhir proses Hierarchical Clustering membagi 12 kecamatan di Kota Bekasi
+ke dalam tiga kelompok berdasarkan rata-rata jumlah murid SMP Negeri dan
+SMP Swasta. Setiap cluster memiliki karakteristik yang berbeda sehingga dapat
+diinterpretasikan sebagai cluster tinggi, sedang, dan rendah.
+    """)
 
-Halaman ini menampilkan hasil akhir proses Hierarchical Clustering berupa pembagian 12 kecamatan ke dalam 3 cluster. Setiap cluster berisi kecamatan yang memiliki karakteristik jumlah murid yang relatif mirip berdasarkan dua variabel penelitian, yaitu rata-rata jumlah murid SMP Negeri dan SMP Swasta. Hasil ini dapat digunakan sebagai dasar analisis untuk mengetahui karakteristik masing-masing kelompok kecamatan.
-""")
+    # =====================================================
+    # DATA
+    # =====================================================
 
-    st.caption("🧩 Hasil clustering dapat digunakan sebagai dasar analisis karakteristik setiap kelompok kecamatan.")
+    X = df[["Rata_Negeri","Rata_Swasta"]]
 
-    st.success("""
-**Kesimpulan Singkat**
-
-Hasil pengelompokan membagi 12 kecamatan menjadi 3 kelompok berdasarkan kemiripan karakteristik jumlah murid. Setiap cluster dapat digunakan sebagai dasar analisis lebih lanjut mengenai kondisi pendidikan di masing-masing wilayah.
-""")
-
-    # Mengambil dua variabel
-    X = df[["Rata_Negeri", "Rata_Swasta"]]
-
-    # Membuat model Hierarchical Clustering
-    model = AgglomerativeClustering(n_clusters=3)
-
-    # Menentukan cluster
-    cluster = model.fit_predict(X)
-
-    # Menambahkan kolom Cluster
-    df_cluster = df.copy()
-    df_cluster["Cluster"] = cluster + 1
-
-    # Mengurutkan berdasarkan cluster
-    df_cluster = df_cluster.sort_values("Cluster").reset_index(drop=True)
-
-    # Nomor urut mulai dari 1
-    df_cluster.index = df_cluster.index + 1
-
-    # Menambahkan interpretasi
-    interpretasi = {
-    1: "Tinggi",
-    2: "Rendah",
-    3: "Sedang"
-}
-
-    df_cluster["Interpretasi"] = df_cluster["Cluster"].map(interpretasi)
-
-
-
-
-    # ============================
-    # Tabel
-    # ============================
-
-    df_tampil = df_cluster.copy()
-
-    # Mengubah nama kolom agar lebih jelas
-    df_tampil = df_tampil.rename(columns={
-    "Rata_Negeri": "Rata-rata Negeri",
-    "Rata_Swasta": "Rata-rata Swasta",
-    "Interpretasi": "Kategori"
-    })
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    st.dataframe(
-    df_tampil,
-    use_container_width=True,
-    height=450
+    model = AgglomerativeClustering(
+        n_clusters=3,
+        linkage="ward"
     )
 
-    st.success("Jumlah Cluster yang terbentuk : 3")
+    cluster = model.fit_predict(X)
+
+    df_cluster = df.copy()
+
+    df_cluster["Cluster"] = cluster + 1
