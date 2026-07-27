@@ -199,7 +199,7 @@ Sebelum dilakukan proses Hierarchical Clustering, data terlebih dahulu melalui t
     st.dataframe(
     df_tampil,
     use_container_width=True,
-    height=450
+    height=420
 )
 
 # =====================
